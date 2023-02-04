@@ -78,7 +78,7 @@ TextureImporter:
       213: 3165662889116431044
     second: Shield wall_24
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -95,10 +95,12 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -137,6 +139,8 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -152,6 +156,42 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -700,9 +740,34 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      Shield wall_22: -7260389789312908518
+      Shield wall_9: 4771978338803787053
+      Shield wall_5: 7798741286756928785
+      Shield wall_0: 8427091999915020584
+      Shield wall_14: 4044809929779185039
+      Shield wall_13: 9057408463539067833
+      Shield wall_21: 198907525669367860
+      Shield wall_12: -7339408324448937495
+      Shield wall_15: -1725052645046243815
+      Shield wall_7: 6835046210270891600
+      Shield wall_1: -6100025536794868755
+      Shield wall_3: 7636098840282558452
+      Shield wall_11: -2770709363488518369
+      Shield wall_10: -5364961560750348987
+      Shield wall_16: 2138313940827893541
+      Shield wall_24: 3165662889116431044
+      Shield wall_2: 3161001755848062265
+      Shield wall_17: -8670404967907136375
+      Shield wall_23: -3499995729375052841
+      Shield wall_19: 7368145580887146062
+      Shield wall_20: 6983045300351878742
+      Shield wall_6: -8887383933922056584
+      Shield wall_8: -1017789915132671531
+      Shield wall_4: -5163689174786826038
+      Shield wall_18: -28464780274028293
   spritePackingTag: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 
