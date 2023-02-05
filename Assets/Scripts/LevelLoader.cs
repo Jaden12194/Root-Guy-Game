@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class LevelLoader : MonoBehaviour
 {
-    void OnTriggerEnter2D(Collider2D collision)
+    void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
@@ -22,7 +22,7 @@ public class LevelLoader : MonoBehaviour
             Debug.Log("Not Cutscene 1");
             SceneManager.LoadScene(2);
         }
-        else if (SceneManager.GetActiveScene().name == "level 2")
+        else if (SceneManager.GetActiveScene().name == "Level 2"||SceneManager.GetActiveScene().name == "level 2")
         {
             Debug.Log("Not Level 1");
             SceneManager.LoadScene(3);
