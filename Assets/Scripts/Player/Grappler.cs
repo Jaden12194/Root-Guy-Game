@@ -8,70 +8,96 @@ public class Grappler : MonoBehaviour
     public LineRenderer _lineRenderer;
     public DistanceJoint2D _distanceJoint;
     public Rigidbody2D rb;
-    private bool MouseKeyDown = false;
 
     public float moveSpeed = .1f;
     Vector2 position;
     Vector3 mousePos;
     [SerializeField] private float ThrowImpulse;
 
+    [SerializeField] private float SwingCooldown;
+    [SerializeField] private float GrappleCooldown;
+    [SerializeField] public float MaxCooldown;
+
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         _distanceJoint.enabled = false;
+        _lineRenderer.enabled = false;
     }
     
     // Update is called once per frame
     void Update()
     {
-        if(MouseKeyDown == true)
+        if (_lineRenderer.enabled)
         {
             _lineRenderer.SetPosition(1, transform.position);
         }
-        if (Input.GetKeyDown(KeyCode.Mouse1)) //Right Click (Just Swing)
+        if (SwingCooldown > 0)
         {
-            Vector2 mousePos = (Vector2)mainCamera.ScreenToWorldPoint(Input.mousePosition);
-            _lineRenderer.SetPosition(0, mousePos);
-            _lineRenderer.SetPosition(1, transform.position);
-            _distanceJoint.connectedAnchor = mousePos;
-            _distanceJoint.enabled = true;
-            _lineRenderer.enabled = true;
+            SwingCooldown -= Time.deltaTime;
+            return;
+        }
+        else if (Input.GetKeyDown(KeyCode.Mouse1)) //Right Click (Just Swing)
+        {
+            Swing();
         }
         else if (Input.GetKeyUp(KeyCode.Mouse1))
         {
-            GetMousePosition();
+            SwingCooldownReset();
             _distanceJoint.enabled = false;
             _lineRenderer.enabled = false;
         }
-        if (Input.GetKeyDown(KeyCode.Mouse0)) //This one will move the character towards the location (Left click)
+        if(GrappleCooldown > 0)
         {
-            MouseKeyDown = true;
-            GetMousePosition();
-            _lineRenderer.SetPosition(0, mousePos);
-            _lineRenderer.SetPosition(1, transform.position);
-            //_distanceJoint.connectedAnchor = mousePos;
-            //_distanceJoint.enabled = true;
-            _lineRenderer.enabled = true;
+            GrappleCooldown -= Time.deltaTime;
+            return;
+        }
+        else if (Input.GetKeyDown(KeyCode.Mouse0)) //This one will move the character towards the location (Left click)
+        {
+            Grapple();
         }else if (Input.GetKey(KeyCode.Mouse0))
         {
             rb.AddForce((mousePos - transform.position) * ThrowImpulse, ForceMode2D.Force);
         }
         else if (Input.GetKeyUp(KeyCode.Mouse0))
         {
+            GrappleCooldownReset();
             GetMousePosition();
             _distanceJoint.enabled = false;
             _lineRenderer.enabled = false;
             rb.AddForce((mousePos - transform.position) * ThrowImpulse, ForceMode2D.Impulse);
         }
-        if (_distanceJoint.enabled)
-        {
-            _lineRenderer.SetPosition(1, transform.position);
-        }
-        void GetMousePosition()
+    }
+    void GetMousePosition()
         {
             mousePos = Input.mousePosition;
             mousePos = mainCamera.ScreenToWorldPoint(Input.mousePosition);
         }
+    void Swing()
+    {
+        Vector2 mousePos = (Vector2)mainCamera.ScreenToWorldPoint(Input.mousePosition);
+        _lineRenderer.SetPosition(0, mousePos);
+        _lineRenderer.SetPosition(1, transform.position);
+        _distanceJoint.connectedAnchor = mousePos;
+        _distanceJoint.enabled = true;
+        _lineRenderer.enabled = true;
+    }
+    void Grapple()
+    {
+        GetMousePosition();
+        _lineRenderer.SetPosition(0, mousePos);
+        _lineRenderer.SetPosition(1, transform.position);
+        //_distanceJoint.connectedAnchor = mousePos;
+        //_distanceJoint.enabled = true;
+        _lineRenderer.enabled = true;
+    }
+    void SwingCooldownReset()
+    {
+        SwingCooldown = MaxCooldown;
+    }
+    void GrappleCooldownReset()
+    {
+        GrappleCooldown = MaxCooldown;
     }
 }
