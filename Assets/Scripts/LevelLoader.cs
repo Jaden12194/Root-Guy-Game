@@ -15,8 +15,8 @@ public class LevelLoader : MonoBehaviour
         if (SceneManager.GetActiveScene().name == "Cutscene 1")
             SceneManager.LoadScene("Level 1");
         else if (SceneManager.GetActiveScene().name == "Level 1")
-            SceneManager.LoadScene("Level 2");
-        else if (SceneManager.GetActiveScene().name == "Level 2")
+            SceneManager.LoadScene("level 2");
+        else if (SceneManager.GetActiveScene().name == "level 2")
             SceneManager.LoadScene("Cutscene 2");
         else if (SceneManager.GetActiveScene().name == "Cutscene 2")
             SceneManager.LoadScene("Overworld2");

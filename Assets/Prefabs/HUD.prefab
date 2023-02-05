@@ -176,7 +176,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -1946,6 +1946,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2600620029953918680, guid: 03fc324bfebbdf542b527a981550832b, type: 3}
+      propertyPath: NextButton
+      value: 
+      objectReference: {fileID: 6719367336352992199}
+    - target: {fileID: 2600620029953918680, guid: 03fc324bfebbdf542b527a981550832b, type: 3}
+      propertyPath: restartButton
+      value: 
+      objectReference: {fileID: 572586482949694988}
     - target: {fileID: 2784063229081313497, guid: 03fc324bfebbdf542b527a981550832b, type: 3}
       propertyPath: m_Name
       value: GameManager
@@ -1988,6 +1996,17 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1917462713276656426}
   m_SourcePrefab: {fileID: 100100000, guid: 03fc324bfebbdf542b527a981550832b, type: 3}
+--- !u!114 &572586482949694988 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7741706315951439053, guid: 03fc324bfebbdf542b527a981550832b, type: 3}
+  m_PrefabInstance: {fileID: 7818861105589443265}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &5230208161304910873 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2600620029953918680, guid: 03fc324bfebbdf542b527a981550832b, type: 3}
