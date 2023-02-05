@@ -14,13 +14,14 @@ public class Grappler : MonoBehaviour
     Vector3 mousePos;
     [SerializeField] private float ThrowImpulse;
 
-    [SerializeField] private float SwingCooldown;
-    [SerializeField] private float GrappleCooldown;
-    [SerializeField] public float MaxCooldown;
+    public float SwingCooldown;
+    public float GrappleCooldown;
+    public float MaxCooldown;
 
     // Start is called before the first frame update
     void Start()
     {
+        mainCamera = GameObject.Find("Main Camera").GetComponent<Camera>();
         rb = GetComponent<Rigidbody2D>();
         _distanceJoint.enabled = false;
         _lineRenderer.enabled = false;
@@ -36,7 +37,6 @@ public class Grappler : MonoBehaviour
         if (SwingCooldown > 0)
         {
             SwingCooldown -= Time.deltaTime;
-            return;
         }
         else if (Input.GetKeyDown(KeyCode.Mouse1)) //Right Click (Just Swing)
         {
@@ -51,7 +51,6 @@ public class Grappler : MonoBehaviour
         if(GrappleCooldown > 0)
         {
             GrappleCooldown -= Time.deltaTime;
-            return;
         }
         else if (Input.GetKeyDown(KeyCode.Mouse0)) //This one will move the character towards the location (Left click)
         {

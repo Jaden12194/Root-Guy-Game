@@ -15,9 +15,11 @@ GameObject:
   - component: {fileID: 951708013225630946}
   - component: {fileID: 4730701694668841587}
   - component: {fileID: 47363106152328830}
+  - component: {fileID: 593120145189728033}
+  - component: {fileID: 4227234903476286184}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30,12 +32,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3480979330464025441}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.998626, y: 0.6283933, z: 0}
+  m_LocalPosition: {x: -1.5, y: -1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7028573137849421652
 SpriteRenderer:
@@ -143,7 +145,7 @@ DistanceJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 10.0183525
+  m_Distance: 1.8027756
   m_MaxDistanceOnly: 0
 --- !u!120 &4730701694668841587
 LineRenderer:
@@ -265,7 +267,48 @@ MonoBehaviour:
   _distanceJoint: {fileID: 951708013225630946}
   rb: {fileID: 0}
   moveSpeed: 0.1
-  ThrowImpulse: 1
+  ThrowImpulse: 3
   SwingCooldown: 0
   GrappleCooldown: 0
   MaxCooldown: 1
+--- !u!61 &593120145189728033
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3480979330464025441}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!114 &4227234903476286184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3480979330464025441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68882b1338100734895c70bc0d874df1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 10
+  hitDamage: 1
+  healthBar: {fileID: 0}

@@ -13,7 +13,7 @@ public class fire : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.Find("Player");
+        player = GameObject.FindGameObjectWithTag("Player");
         fireRb = GetComponent<Rigidbody2D>();
         lookDirection = (player.transform.position - transform.position).normalized;
     }
@@ -24,5 +24,9 @@ public class fire : MonoBehaviour
         fireRb.AddForce(lookDirection * speed);
         if (transform.position.x < -xRange || transform.position.x > xRange || transform.position.y < -yRange || transform.position.y > yRange)
             Destroy(gameObject);
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Destroy(gameObject);
     }
 }
