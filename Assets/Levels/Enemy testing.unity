@@ -900,6 +900,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fire: {fileID: 1099478986843446698, guid: 70279700d6b64df47b6d042ba56e7391, type: 3}
+  FirePoint: {fileID: 1054309049}
 --- !u!1 &1085414039
 GameObject:
   m_ObjectHideFlags: 0

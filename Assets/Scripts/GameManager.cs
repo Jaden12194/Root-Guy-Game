@@ -13,10 +13,14 @@ public class GameManager : MonoBehaviour
     public bool isGameOver;
     public TextMeshProUGUI gameOverText;
     public Button restartButton;
+    public Button NextButton;
+    private LevelLoader levelLoaderScript;
     // Start is called before the first frame update
     void Start()
     {
+        Time.timeScale = 1;
         healthBar = GameObject.Find("green").GetComponent<Image>();
+        levelLoaderScript = GameObject.Find("LevelManagement").GetComponent<LevelLoader>();
     }
 
     // Update is called once per frame
@@ -27,6 +31,7 @@ public class GameManager : MonoBehaviour
             isGameOver = true;
             gameOverText.gameObject.SetActive(true);
             restartButton.gameObject.SetActive(true);
+            NextButton.gameObject.SetActive(true);
         }
     }
     private void OnCollisionEnter2D(Collision2D collision)
@@ -38,6 +43,7 @@ public class GameManager : MonoBehaviour
         if(collision.gameObject.CompareTag("Deathpit"))
         {
             health = 0;
+            Debug.Log("Deathpit");
         }
     }
     public void DealDamage()
@@ -51,5 +57,9 @@ public class GameManager : MonoBehaviour
     public void Restart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name); // gets the active scene, we dont have to remember scene names
+    }
+    public void NextLevel()
+    {
+        levelLoaderScript.LoadScene();
     }
 }
