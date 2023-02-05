@@ -593,6 +593,7 @@ GameObject:
   - component: {fileID: 106808783}
   - component: {fileID: 106808782}
   - component: {fileID: 106808781}
+  - component: {fileID: 106808784}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -666,6 +667,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &106808784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 106808780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a92cee60a5160f14ba5b7ca8e5ec09c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FollowSpeed: 2
+  target: {fileID: 0}
+  yheight: 0
+  CameraLimit: {fileID: 0}
 --- !u!1 &127490912
 GameObject:
   m_ObjectHideFlags: 0
@@ -1935,7 +1952,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 415540533}
   m_LocalRotation: {x: -0, y: -0, z: 0.9282034, w: 0.3720733}
-  m_LocalPosition: {x: 10.553, y: 1.9875, z: 0}
+  m_LocalPosition: {x: 10.938, y: 1.9875998, z: 0}
   m_LocalScale: {x: 0.4337041, y: 1.9972229, z: 0.98232}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2906,7 +2923,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 975824957}
   m_LocalRotation: {x: -0, y: -0, z: 0.7044644, w: 0.7097393}
-  m_LocalPosition: {x: 10.923, y: -1.9534, z: 0}
+  m_LocalPosition: {x: 11.308, y: -1.9533001, z: 0}
   m_LocalScale: {x: 6.8323474, y: 0.33376065, z: 0.97363627}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3487,7 +3504,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3265119668890964080, guid: 485ea6fd3ee05a14389d5c77567e1fcf, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.6182
+      value: -6.42
       objectReference: {fileID: 0}
     - target: {fileID: 3265119668890964080, guid: 485ea6fd3ee05a14389d5c77567e1fcf, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3547,7 +3564,7 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -3759,7 +3776,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1363756388}
   m_LocalRotation: {x: -0, y: -0, z: 0.7044644, w: 0.7097393}
-  m_LocalPosition: {x: 10.935, y: 1.7999, z: 0}
+  m_LocalPosition: {x: 11.32, y: 1.8, z: 0}
   m_LocalScale: {x: 6.2106605, y: 0.33376065, z: 0.97363627}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4040,19 +4057,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5646646105510624848, guid: 4f18902d0cbb60c4f898a6bac7dc46e2, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.3537327
+      value: 1.8605703
       objectReference: {fileID: 0}
     - target: {fileID: 5646646105510624848, guid: 4f18902d0cbb60c4f898a6bac7dc46e2, type: 3}
       propertyPath: m_LocalScale.y
-      value: 7.394712
+      value: 7.484188
       objectReference: {fileID: 0}
     - target: {fileID: 5646646105510624848, guid: 4f18902d0cbb60c4f898a6bac7dc46e2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 10.3501
+      value: 10.6035
       objectReference: {fileID: 0}
     - target: {fileID: 5646646105510624848, guid: 4f18902d0cbb60c4f898a6bac7dc46e2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.8491
+      value: 7.8044
       objectReference: {fileID: 0}
     - target: {fileID: 5646646105510624848, guid: 4f18902d0cbb60c4f898a6bac7dc46e2, type: 3}
       propertyPath: m_LocalPosition.z
