@@ -32,7 +32,7 @@ public class Grappler : MonoBehaviour
     void Update()
     {
         if (GameManager.health == 0)
-            return;
+            Destroy(this);
         if (_lineRenderer.enabled)
         {
             _lineRenderer.SetPosition(1, transform.position);
