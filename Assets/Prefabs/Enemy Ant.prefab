@@ -125,3 +125,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fire: {fileID: 1099478986843446698, guid: 70279700d6b64df47b6d042ba56e7391, type: 3}
+  FirePoint: {fileID: 8758559552390725156}
