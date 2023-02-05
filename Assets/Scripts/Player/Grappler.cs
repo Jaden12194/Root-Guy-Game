@@ -8,6 +8,7 @@ public class Grappler : MonoBehaviour
     public LineRenderer _lineRenderer;
     public DistanceJoint2D _distanceJoint;
     public Rigidbody2D rb;
+    [SerializeField] private GameManager GameManager;
 
     public float moveSpeed = .1f;
     Vector2 position;
@@ -30,6 +31,8 @@ public class Grappler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (GameManager.health == 0)
+            return;
         if (_lineRenderer.enabled)
         {
             _lineRenderer.SetPosition(1, transform.position);
