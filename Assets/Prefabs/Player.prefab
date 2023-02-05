@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 4730701694668841587}
   - component: {fileID: 47363106152328830}
   - component: {fileID: 593120145189728033}
-  - component: {fileID: 4227234903476286184}
+  - component: {fileID: 4458974654648878624}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -37,7 +37,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7028573137849421652
 SpriteRenderer:
@@ -297,7 +297,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &4227234903476286184
+--- !u!114 &4458974654648878624
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -306,9 +306,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 3480979330464025441}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68882b1338100734895c70bc0d874df1, type: 3}
+  m_Script: {fileID: 11500000, guid: 017f6788d6358b148affb8bb28b21fda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   health: 10
   hitDamage: 1
-  healthBar: {fileID: 0}
+  isGameOver: 0

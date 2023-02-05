@@ -9,7 +9,7 @@ public class fire : MonoBehaviour
     private float yRange = 5.5f;
     private Rigidbody2D fireRb;
     private GameObject player;
-    public Vector3 lookDirection;
+    private Vector3 lookDirection;
     // Start is called before the first frame update
     void Start()
     {
