@@ -35,6 +35,10 @@ public class GameManager : MonoBehaviour
         {
             DealDamage();
         }
+        if(collision.gameObject.CompareTag("Deathpit"))
+        {
+            health = 0;
+        }
     }
     public void DealDamage()
     {

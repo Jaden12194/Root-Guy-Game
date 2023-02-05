@@ -8,6 +8,7 @@ public class Enemy : MonoBehaviour
     private float startDelay = 1.0f;
     private float repeatRate = 1.5f;
     private GameManager gameManagerScript;
+    [SerializeField] private Transform FirePoint;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +24,6 @@ public class Enemy : MonoBehaviour
     }
     void LaunchFire()
     {
-        Instantiate(fire, transform.position, fire.transform.rotation); // launch from enemy's pos
+        Instantiate(fire, FirePoint.transform.position, fire.transform.rotation); // launch from enemy's pos
     }
 }

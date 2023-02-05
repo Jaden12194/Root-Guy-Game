@@ -14,6 +14,7 @@ public class Grappler : MonoBehaviour
     Vector2 position;
     Vector3 mousePos;
     [SerializeField] private float ThrowImpulse;
+    [SerializeField] private float MaxVelocity;
 
     public float SwingCooldown;
     public float GrappleCooldown;
@@ -27,7 +28,7 @@ public class Grappler : MonoBehaviour
         _distanceJoint.enabled = false;
         _lineRenderer.enabled = false;
     }
-    
+
     // Update is called once per frame
     void Update()
     {
@@ -51,14 +52,15 @@ public class Grappler : MonoBehaviour
             _distanceJoint.enabled = false;
             _lineRenderer.enabled = false;
         }
-        if(GrappleCooldown > 0)
+        if (GrappleCooldown > 0)
         {
             GrappleCooldown -= Time.deltaTime;
         }
         else if (Input.GetKeyDown(KeyCode.Mouse0)) //This one will move the character towards the location (Left click)
         {
             Grapple();
-        }else if (Input.GetKey(KeyCode.Mouse0))
+        }
+        else if (Input.GetKey(KeyCode.Mouse0))
         {
             rb.AddForce((mousePos - transform.position) * ThrowImpulse, ForceMode2D.Force);
         }
@@ -69,6 +71,20 @@ public class Grappler : MonoBehaviour
             _distanceJoint.enabled = false;
             _lineRenderer.enabled = false;
             rb.AddForce((mousePos - transform.position) * ThrowImpulse, ForceMode2D.Impulse);
+        }
+        if (rb.velocity.x > MaxVelocity)
+        {
+            rb.velocity = new Vector2(MaxVelocity, rb.velocity.y);
+        }else if (rb.velocity.x < -MaxVelocity)
+        {
+            rb.velocity = new Vector2(-MaxVelocity, rb.velocity.y);
+        }
+        else if (rb.velocity.y > MaxVelocity)
+        {
+            rb.velocity = new Vector2(rb.velocity.x, MaxVelocity);
+        }else if (rb.velocity.y < -MaxVelocity)
+        {
+            rb.velocity = new Vector2(rb.velocity.x, -MaxVelocity);
         }
     }
     void GetMousePosition()

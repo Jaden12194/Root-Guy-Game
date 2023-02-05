@@ -265,12 +265,14 @@ MonoBehaviour:
   mainCamera: {fileID: 0}
   _lineRenderer: {fileID: 4730701694668841587}
   _distanceJoint: {fileID: 951708013225630946}
-  rb: {fileID: 0}
+  rb: {fileID: 4636869355545226220}
+  GameManager: {fileID: 4458974654648878624}
   moveSpeed: 0.1
-  ThrowImpulse: 3
+  ThrowImpulse: 1
+  MaxVelocity: 20
   SwingCooldown: 0
   GrappleCooldown: 0
-  MaxCooldown: 1
+  MaxCooldown: 2
 --- !u!61 &593120145189728033
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -312,3 +314,5 @@ MonoBehaviour:
   health: 10
   hitDamage: 1
   isGameOver: 0
+  gameOverText: {fileID: 0}
+  restartButton: {fileID: 0}
